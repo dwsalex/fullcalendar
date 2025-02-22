@@ -39,7 +39,7 @@ export const eventSourceDef: EventSourceDef<ICalFeedMeta> = {
         response: null,
         iCalExpanderPromise: fetch(
           meta.url,
-          { method: 'GET' },
+          { method: 'GET', mode: 'no-cors' },
         ).then((response) => {
           return response.text().then((icsText) => {
             internalState.response = response
